@@ -7,7 +7,11 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.ComponentModel;
+using System.Data;
+using System.Text;
 using Newtonsoft.Json;
+
 
 namespace OnTimePhoneApp
 {
@@ -41,8 +45,14 @@ namespace OnTimePhoneApp
         {
             InitializeComponent();
             var url = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=wX9NwuHnZU2ToO7GmGR9uw&route=931_";
-            var stops = JsonConvert.DeserializeObject(url);
-
+            try
+            {
+                var stops = JsonConvert.DeserializeObject(url);
+            }
+            catch(JsonSerializationException jsonner)
+            {
+                
+            }
 
         }
     }
