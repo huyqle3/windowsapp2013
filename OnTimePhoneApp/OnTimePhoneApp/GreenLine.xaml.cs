@@ -16,9 +16,9 @@ using System.Windows.Shapes;
 
 namespace OnTimePhoneApp
 {
-    public static class CoordinateConverter
+    public static class CoordinateConverterGreen
     {
-        public static GeoCoordinate ConvertGeocoordinate(Geocoordinate geocoordinate)
+        public static GeoCoordinate ConvertGeocoordinateGreen(Geocoordinate geocoordinate)
         {
             return new GeoCoordinate
                 (
@@ -39,6 +39,7 @@ namespace OnTimePhoneApp
         public GreenLine()
         {
             InitializeComponent();
+            map.SetView(new GeoCoordinate(42.3487, -71.0956, 200), 12);
         }
 
         private async void ShowMyLocationOnTheMap()
@@ -46,11 +47,11 @@ namespace OnTimePhoneApp
             Geolocator myGeolocator = new Geolocator();
             Geoposition myGeoposition = await myGeolocator.GetGeopositionAsync();
             Geocoordinate myGeocoordinate = myGeoposition.Coordinate;
-            GeoCoordinate myGeoCoordinate = CoordinateConverter.ConvertGeocoordinate(myGeocoordinate);
+            GeoCoordinate myGeoCoordinate = CoordinateConverterGreen.ConvertGeocoordinateGreen(myGeocoordinate);
             this.map.Center = myGeoCoordinate;
             this.map.ZoomLevel = 13;
             Ellipse myCircle = new Ellipse();
-            myCircle.Fill = new SolidColorBrush(Colors.Blue);
+            myCircle.Fill = new SolidColorBrush(Colors.Red);
             myCircle.Height = 20;
             myCircle.Width = 20;
             myCircle.Opacity = 50;
@@ -66,6 +67,16 @@ namespace OnTimePhoneApp
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ShowMyLocationOnTheMap();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            map.ZoomLevel++; 
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            map.ZoomLevel--;
         }
         
     }

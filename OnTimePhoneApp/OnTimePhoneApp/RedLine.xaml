@@ -24,15 +24,15 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="Red Line" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <!--<TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>-->
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
-            <maps:Map x:Name="RedLineMap"/>
-
+            <maps:Map x:Name="map"/>
+            <Button Content="+" HorizontalAlignment="Left" Margin="10,316,0,0" VerticalAlignment="Top" Height="64" Width="70" Click="Button_Click_1"/>
+            <Button Content="-" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click_2"/>
         </Grid>
+        <Button Content="Location" HorizontalAlignment="Left" Margin="284,0,0,0" VerticalAlignment="Top" Click="Button_Click"/>
     </Grid>
 
 </phone:PhoneApplicationPage>
