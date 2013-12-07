@@ -42,11 +42,14 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="OnTime" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="WhiteSmoke"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Button Content="Map" HorizontalAlignment="Left" Margin="42,48,0,0" VerticalAlignment="Top" Height="159" Width="362" Click="Button_Click"/>
+            <Button Content="Trains" HorizontalAlignment="Left" Margin="42,212,0,0" VerticalAlignment="Top" Height="138" Width="186"/>
+            <Button Content="Favorites" HorizontalAlignment="Left" Margin="228,212,0,0" VerticalAlignment="Top" Height="138" Width="176"/>
 
         </Grid>
 
