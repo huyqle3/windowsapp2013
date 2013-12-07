@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
@@ -13,9 +14,32 @@ using System.Device.Location;
 using Windows.Devices.Geolocation;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace OnTimePhoneApp
 {
+    public class Rootobject
+    {
+        public Direction[] direction { get; set; }
+    }
+
+    public class Direction
+    {
+        public string direction_id { get; set; }
+        public string direction_name { get; set; }
+        public Stop[] stop { get; set; }
+    }
+
+    public class Stop
+    {
+        public string parent_station { get; set; }
+        public string parent_station_name { get; set; }
+        public string stop_id { get; set; }
+        public string stop_lat { get; set; }
+        public string stop_lon { get; set; }
+        public string stop_name { get; set; }
+        public string stop_order { get; set; }
+    }
     public static class CoordinateConverterRed
     {
         public static GeoCoordinate ConvertGeocoordinateRed(Geocoordinate geocoordinate)
@@ -35,11 +59,13 @@ namespace OnTimePhoneApp
 
     public partial class RedLine : PhoneApplicationPage
     {
-
+        const string red931 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=wX9NwuHnZU2ToO7GmGR9uw&route=931_";
+        Rootobject stops = new Rootobject();
         public RedLine()
         {
             InitializeComponent();
             map.SetView(new GeoCoordinate(42.3487, -71.0956, 200), 12);
+            Loaded += RedLine_Loaded;
         }
 
         private async void ShowMyLocationOnTheMap()
@@ -63,7 +89,16 @@ namespace OnTimePhoneApp
             myLocationLayer.Add(myLocationOverlay);
             map.Layers.Add(myLocationLayer);
         }
-
+        async void RedLine_Loaded(object sender, RoutedEventArgs e)
+        {
+            var httpClient = new HttpClient();
+            var json = await httpClient.GetStringAsync(red931);
+            try
+            {
+                var stops = JsonConvert.DeserializeObject(json);
+            }
+            catch (JsonSerializationException jsonner) { }
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ShowMyLocationOnTheMap();
