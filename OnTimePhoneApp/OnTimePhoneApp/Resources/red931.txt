@@ -1,0 +1,322 @@
+﻿{
+    "direction": [
+        {
+            "direction_id": "0", 
+            "direction_name": "Southbound", 
+            "stop": [
+                {
+                    "parent_station": "place-alfcl", 
+                    "parent_station_name": "Alewife Station", 
+                    "stop_id": "70061", 
+                    "stop_lat": "42.3954277038574", 
+                    "stop_lon": "-71.1424865722656", 
+                    "stop_name": "Alewife Station Red Line", 
+                    "stop_order": "1"
+                }, 
+                {
+                    "parent_station": "place-davis", 
+                    "parent_station_name": "Davis Station", 
+                    "stop_id": "70063", 
+                    "stop_lat": "42.3967399597168", 
+                    "stop_lon": "-71.1218185424805", 
+                    "stop_name": "Davis Sq - Inbound", 
+                    "stop_order": "2"
+                }, 
+                {
+                    "parent_station": "place-portr", 
+                    "parent_station_name": "Porter Square Station", 
+                    "stop_id": "70065", 
+                    "stop_lat": "42.3884010314941", 
+                    "stop_lon": "-71.1191482543945", 
+                    "stop_name": "Porter Sq - Inbound", 
+                    "stop_order": "3"
+                }, 
+                {
+                    "parent_station": "place-harsq", 
+                    "parent_station_name": "Harvard Square Station", 
+                    "stop_id": "70067", 
+                    "stop_lat": "42.373363494873", 
+                    "stop_lon": "-71.1189575195313", 
+                    "stop_name": "Harvard Station - Inbound", 
+                    "stop_order": "4"
+                }, 
+                {
+                    "parent_station": "place-cntsq", 
+                    "parent_station_name": "Central Square Station", 
+                    "stop_id": "70069", 
+                    "stop_lat": "42.3654861450195", 
+                    "stop_lon": "-71.1038055419922", 
+                    "stop_name": "Central Sq - Inbound", 
+                    "stop_order": "5"
+                }, 
+                {
+                    "parent_station": "place-knncl", 
+                    "parent_station_name": "Kendall/MIT Station", 
+                    "stop_id": "70071", 
+                    "stop_lat": "42.362491607666", 
+                    "stop_lon": "-71.0861740112305", 
+                    "stop_name": "Kendall/MIT Station - Inbound", 
+                    "stop_order": "6"
+                }, 
+                {
+                    "parent_station": "place-chmnl", 
+                    "parent_station_name": "Charles/MGH Station", 
+                    "stop_id": "70073", 
+                    "stop_lat": "42.3611640930176", 
+                    "stop_lon": "-71.0706253051758", 
+                    "stop_name": "Charles/MGH Station -  Inbound", 
+                    "stop_order": "7"
+                }, 
+                {
+                    "parent_station": "place-pktrm", 
+                    "parent_station_name": "Park St. Station", 
+                    "stop_id": "70075", 
+                    "stop_lat": "42.3563957214355", 
+                    "stop_lon": "-71.0624237060547", 
+                    "stop_name": "Park St Station - to Ashmont/Braintree", 
+                    "stop_order": "8"
+                }, 
+                {
+                    "parent_station": "place-dwnxg", 
+                    "parent_station_name": "Downtown Crossing Station", 
+                    "stop_id": "70077", 
+                    "stop_lat": "42.3555183410645", 
+                    "stop_lon": "-71.0602264404297", 
+                    "stop_name": "Downtown Crossing - to Ashmont/Braintree", 
+                    "stop_order": "9"
+                }, 
+                {
+                    "parent_station": "place-sstat", 
+                    "parent_station_name": "South Station", 
+                    "stop_id": "70079", 
+                    "stop_lat": "42.3522720336914", 
+                    "stop_lon": "-71.0552444458008", 
+                    "stop_name": "South Station - Outbound", 
+                    "stop_order": "10"
+                }, 
+                {
+                    "parent_station": "place-brdwy", 
+                    "parent_station_name": "Broadway Station", 
+                    "stop_id": "70081", 
+                    "stop_lat": "42.3426208496094", 
+                    "stop_lon": "-71.0569686889648", 
+                    "stop_name": "Broadway Station - Outbound", 
+                    "stop_order": "11"
+                }, 
+                {
+                    "parent_station": "place-andrw", 
+                    "parent_station_name": "Andrew Station", 
+                    "stop_id": "70083", 
+                    "stop_lat": "42.3301544189453", 
+                    "stop_lon": "-71.0576553344727", 
+                    "stop_name": "Andrew Sq Station - Outbound", 
+                    "stop_order": "12"
+                }, 
+                {
+                    "parent_station": "place-jfk", 
+                    "parent_station_name": "JFK/UMass Station", 
+                    "stop_id": "70085", 
+                    "stop_lat": "42.320686340332", 
+                    "stop_lon": "-71.0523910522461", 
+                    "stop_name": "JFK/UMASS Ashmont - Outbound", 
+                    "stop_order": "13"
+                }, 
+                {
+                    "parent_station": "place-shmnl", 
+                    "parent_station_name": "Savin Hill Station", 
+                    "stop_id": "70087", 
+                    "stop_lat": "42.3112907409668", 
+                    "stop_lon": "-71.0533294677734", 
+                    "stop_name": "Savin Hill Station - Outbound", 
+                    "stop_order": "14"
+                }, 
+                {
+                    "parent_station": "place-fldcr", 
+                    "parent_station_name": "Fields Corner Station", 
+                    "stop_id": "70089", 
+                    "stop_lat": "42.3000946044922", 
+                    "stop_lon": "-71.0616683959961", 
+                    "stop_name": "Fields Corner Station - Outbound", 
+                    "stop_order": "15"
+                }, 
+                {
+                    "parent_station": "place-smmnl", 
+                    "parent_station_name": "Shawmut Station", 
+                    "stop_id": "70091", 
+                    "stop_lat": "42.2931251525879", 
+                    "stop_lon": "-71.0657348632813", 
+                    "stop_name": "Shawmut Station - Outbound", 
+                    "stop_order": "16"
+                }, 
+                {
+                    "parent_station": "place-asmnl", 
+                    "parent_station_name": "Ashmont Station", 
+                    "stop_id": "70093", 
+                    "stop_lat": "42.2846527099609", 
+                    "stop_lon": "-71.0644912719727", 
+                    "stop_name": "Ashmont Station - Red Line", 
+                    "stop_order": "17"
+                }
+            ]
+        }, 
+        {
+            "direction_id": "1", 
+            "direction_name": "Northbound", 
+            "stop": [
+                {
+                    "parent_station": "place-asmnl", 
+                    "parent_station_name": "Ashmont Station", 
+                    "stop_id": "70094", 
+                    "stop_lat": "42.2846527099609", 
+                    "stop_lon": "-71.0644912719727", 
+                    "stop_name": "Ashmont Station Red Line Inbound", 
+                    "stop_order": "1"
+                }, 
+                {
+                    "parent_station": "place-smmnl", 
+                    "parent_station_name": "Shawmut Station", 
+                    "stop_id": "70092", 
+                    "stop_lat": "42.2931251525879", 
+                    "stop_lon": "-71.0657348632813", 
+                    "stop_name": "Shawmut Station - Inbound", 
+                    "stop_order": "2"
+                }, 
+                {
+                    "parent_station": "place-fldcr", 
+                    "parent_station_name": "Fields Corner Station", 
+                    "stop_id": "70090", 
+                    "stop_lat": "42.3000946044922", 
+                    "stop_lon": "-71.0616683959961", 
+                    "stop_name": "Fields Corner Station - Inbound", 
+                    "stop_order": "3"
+                }, 
+                {
+                    "parent_station": "place-shmnl", 
+                    "parent_station_name": "Savin Hill Station", 
+                    "stop_id": "70088", 
+                    "stop_lat": "42.3112907409668", 
+                    "stop_lon": "-71.0533294677734", 
+                    "stop_name": "Savin Hill Station - Inbound", 
+                    "stop_order": "4"
+                }, 
+                {
+                    "parent_station": "place-jfk", 
+                    "parent_station_name": "JFK/UMass Station", 
+                    "stop_id": "70086", 
+                    "stop_lat": "42.320686340332", 
+                    "stop_lon": "-71.0523910522461", 
+                    "stop_name": "JFK/UMASS Ashmont Line Inbound", 
+                    "stop_order": "5"
+                }, 
+                {
+                    "parent_station": "place-andrw", 
+                    "parent_station_name": "Andrew Station", 
+                    "stop_id": "70084", 
+                    "stop_lat": "42.3301544189453", 
+                    "stop_lon": "-71.0576553344727", 
+                    "stop_name": "Andrew Sq Station - Inbound", 
+                    "stop_order": "6"
+                }, 
+                {
+                    "parent_station": "place-brdwy", 
+                    "parent_station_name": "Broadway Station", 
+                    "stop_id": "70082", 
+                    "stop_lat": "42.3426208496094", 
+                    "stop_lon": "-71.0569686889648", 
+                    "stop_name": "Broadway Station - Inbound", 
+                    "stop_order": "7"
+                }, 
+                {
+                    "parent_station": "place-sstat", 
+                    "parent_station_name": "South Station", 
+                    "stop_id": "70080", 
+                    "stop_lat": "42.3522720336914", 
+                    "stop_lon": "-71.0552444458008", 
+                    "stop_name": "South Station - Inbound", 
+                    "stop_order": "8"
+                }, 
+                {
+                    "parent_station": "place-dwnxg", 
+                    "parent_station_name": "Downtown Crossing Station", 
+                    "stop_id": "70078", 
+                    "stop_lat": "42.3555183410645", 
+                    "stop_lon": "-71.0602264404297", 
+                    "stop_name": "Downtown Crossing - to Alewife", 
+                    "stop_order": "9"
+                }, 
+                {
+                    "parent_station": "place-pktrm", 
+                    "parent_station_name": "Park St. Station", 
+                    "stop_id": "70076", 
+                    "stop_lat": "42.3563957214355", 
+                    "stop_lon": "-71.0624237060547", 
+                    "stop_name": "Park St Station - to Alewife", 
+                    "stop_order": "10"
+                }, 
+                {
+                    "parent_station": "place-chmnl", 
+                    "parent_station_name": "Charles/MGH Station", 
+                    "stop_id": "70074", 
+                    "stop_lat": "42.3611640930176", 
+                    "stop_lon": "-71.0706253051758", 
+                    "stop_name": "Charles/MGH Station - Outbound", 
+                    "stop_order": "11"
+                }, 
+                {
+                    "parent_station": "place-knncl", 
+                    "parent_station_name": "Kendall/MIT Station", 
+                    "stop_id": "70072", 
+                    "stop_lat": "42.362491607666", 
+                    "stop_lon": "-71.0861740112305", 
+                    "stop_name": "Kendall/MIT Station - Outbound", 
+                    "stop_order": "12"
+                }, 
+                {
+                    "parent_station": "place-cntsq", 
+                    "parent_station_name": "Central Square Station", 
+                    "stop_id": "70070", 
+                    "stop_lat": "42.3654861450195", 
+                    "stop_lon": "-71.1038055419922", 
+                    "stop_name": "Central Sq - Outbound", 
+                    "stop_order": "13"
+                }, 
+                {
+                    "parent_station": "place-harsq", 
+                    "parent_station_name": "Harvard Square Station", 
+                    "stop_id": "70068", 
+                    "stop_lat": "42.373363494873", 
+                    "stop_lon": "-71.1189575195313", 
+                    "stop_name": "Harvard Station - Outbound", 
+                    "stop_order": "14"
+                }, 
+                {
+                    "parent_station": "place-portr", 
+                    "parent_station_name": "Porter Square Station", 
+                    "stop_id": "70066", 
+                    "stop_lat": "42.3884010314941", 
+                    "stop_lon": "-71.1191482543945", 
+                    "stop_name": "Porter Sq - Outbound", 
+                    "stop_order": "15"
+                }, 
+                {
+                    "parent_station": "place-davis", 
+                    "parent_station_name": "Davis Station", 
+                    "stop_id": "70064", 
+                    "stop_lat": "42.3967399597168", 
+                    "stop_lon": "-71.1218185424805", 
+                    "stop_name": "Davis Square - Outbound", 
+                    "stop_order": "16"
+                }, 
+                {
+                    "parent_station": "place-alfcl", 
+                    "parent_station_name": "Alewife Station", 
+                    "stop_id": "70061", 
+                    "stop_lat": "42.3954277038574", 
+                    "stop_lon": "-71.1424865722656", 
+                    "stop_name": "Alewife Station Red Line", 
+                    "stop_order": "17"
+                }
+            ]
+        }
+    ]
+}
