@@ -71,12 +71,18 @@ namespace OnTimePhoneApp
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            map.ZoomLevel++;
+            if (map.ZoomLevel < 19)
+            {
+                map.ZoomLevel++;
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            map.ZoomLevel--;
+            if (map.ZoomLevel > 2)
+            {
+                map.ZoomLevel--;
+            }
         }
 
     }
