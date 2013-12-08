@@ -49,29 +49,12 @@ namespace OnTimePhoneApp
         public Direction[] direction { get; set; }
     }
 
-    public class Direction
-    {
-        public string direction_id { get; set; }
-        public string direction_name { get; set; }
-        public Trip[] trip { get; set; }
-    }
-
     public class Trip
     {
         public string trip_id { get; set; }
         public string trip_name { get; set; }
         public Stop[] stop { get; set; }
     }
-
-    public class Stop
-    {
-        public string stop_sequence { get; set; }
-        public string stop_id { get; set; }
-        public string stop_name { get; set; }
-        public int sch_arr_dt { get; set; }
-        public int sch_dep_dt { get; set; }
-    }
-
 
     public static class CoordinateConverterRed
     {
