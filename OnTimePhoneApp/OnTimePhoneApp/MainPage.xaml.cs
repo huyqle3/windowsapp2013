@@ -17,7 +17,6 @@ namespace OnTimePhoneApp
         public MainPage()
         {
             InitializeComponent();
-
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
         }

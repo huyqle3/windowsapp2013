@@ -15,6 +15,7 @@ using Windows.Devices.Geolocation;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace OnTimePhoneApp
 {
@@ -112,12 +113,17 @@ namespace OnTimePhoneApp
             object stops;
             try
             {
-                var httpClient = new HttpClient();
+                HttpClient httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 json = await httpClient.GetStringAsync(red931);
                 stops = JsonConvert.DeserializeObject(json);
             }
             catch (JsonSerializationException jsonner) {
                 Console.WriteLine("Jsonner Exception");
+            }
+            catch (HttpRequestException httpe)
+            {
+                Console.WriteLine("Http exception");
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
