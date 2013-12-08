@@ -110,13 +110,14 @@ namespace OnTimePhoneApp
         private async void RedLine_Loaded(object sender, RoutedEventArgs e)
         {
             string json;
-            object stops;
+            var stops = new StopInfo();
             try
             {
                 HttpClient httpClient = new HttpClient();
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 json = await httpClient.GetStringAsync(red931);
-                stops = JsonConvert.DeserializeObject(json);
+                stops = JsonConvert.DeserializeObject<StopInfo>(json);
+                string haha = stops.direction[0].stop[0].stop_lon;
             }
             catch (JsonSerializationException jsonner) {
                 Console.WriteLine("Jsonner Exception");
