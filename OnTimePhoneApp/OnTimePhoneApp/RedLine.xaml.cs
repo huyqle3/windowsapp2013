@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 
 namespace OnTimePhoneApp
 {
-    public class Rootobject
+    public class StopInfo
     {
         public Direction[] direction { get; set; }
     }
@@ -40,6 +40,39 @@ namespace OnTimePhoneApp
         public string stop_name { get; set; }
         public string stop_order { get; set; }
     }
+
+    
+    public class ScheduedETA
+    {
+        public string route_id { get; set; }
+        public string route_name { get; set; }
+        public Direction[] direction { get; set; }
+    }
+
+    public class Direction
+    {
+        public string direction_id { get; set; }
+        public string direction_name { get; set; }
+        public Trip[] trip { get; set; }
+    }
+
+    public class Trip
+    {
+        public string trip_id { get; set; }
+        public string trip_name { get; set; }
+        public Stop[] stop { get; set; }
+    }
+
+    public class Stop
+    {
+        public string stop_sequence { get; set; }
+        public string stop_id { get; set; }
+        public string stop_name { get; set; }
+        public int sch_arr_dt { get; set; }
+        public int sch_dep_dt { get; set; }
+    }
+
+
     public static class CoordinateConverterRed
     {
         public static GeoCoordinate ConvertGeocoordinateRed(Geocoordinate geocoordinate)
@@ -60,7 +93,8 @@ namespace OnTimePhoneApp
     public partial class RedLine : PhoneApplicationPage
     {
         const string red931 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=wX9NwuHnZU2ToO7GmGR9uw&route=931_";
-        Rootobject stops = new Rootobject();
+        StopInfo stops = new StopInfo();
+
         public RedLine()
         {
             InitializeComponent();
@@ -89,15 +123,19 @@ namespace OnTimePhoneApp
             myLocationLayer.Add(myLocationOverlay);
             map.Layers.Add(myLocationLayer);
         }
-        async void RedLine_Loaded(object sender, RoutedEventArgs e)
+        private async void RedLine_Loaded(object sender, RoutedEventArgs e)
         {
-            var httpClient = new HttpClient();
-            var json = await httpClient.GetStringAsync(red931);
+            string json;
+            object stops;
             try
             {
-                var stops = JsonConvert.DeserializeObject(json);
+                var httpClient = new HttpClient();
+                json = await httpClient.GetStringAsync(red931);
+                stops = JsonConvert.DeserializeObject(json);
             }
-            catch (JsonSerializationException jsonner) { }
+            catch (JsonSerializationException jsonner) {
+                Console.WriteLine("Jsonner Exception");
+            }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
