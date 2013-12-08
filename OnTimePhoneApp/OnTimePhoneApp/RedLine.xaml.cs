@@ -110,7 +110,7 @@ namespace OnTimePhoneApp
         private async void RedLine_Loaded(object sender, RoutedEventArgs e)
         {
             string json;
-            var stops = new StopInfo();
+            StopInfo stops;
             try
             {
                 HttpClient httpClient = new HttpClient();
