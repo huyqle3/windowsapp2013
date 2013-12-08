@@ -19,7 +19,7 @@ using System.Net.Http.Headers;
 
 namespace OnTimePhoneApp
 {
-    public class StopInfo
+    public class Rootobject
     {
         public Direction[] direction { get; set; }
     }
@@ -42,21 +42,6 @@ namespace OnTimePhoneApp
         public string stop_order { get; set; }
     }
 
-    
-    public class ScheduedETA
-    {
-        public string route_id { get; set; }
-        public string route_name { get; set; }
-        public Direction[] direction { get; set; }
-    }
-
-    public class Trip
-    {
-        public string trip_id { get; set; }
-        public string trip_name { get; set; }
-        public Stop[] stop { get; set; }
-    }
-
     public static class CoordinateConverterRed
     {
         public static GeoCoordinate ConvertGeocoordinateRed(Geocoordinate geocoordinate)
@@ -77,8 +62,7 @@ namespace OnTimePhoneApp
     public partial class RedLine : PhoneApplicationPage
     {
         const string red931 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=wX9NwuHnZU2ToO7GmGR9uw&route=931_";
-        StopInfo stops = new StopInfo();
-
+        
         public RedLine()
         {
             InitializeComponent();
@@ -107,25 +91,42 @@ namespace OnTimePhoneApp
             myLocationLayer.Add(myLocationOverlay);
             map.Layers.Add(myLocationLayer);
         }
-        private async void RedLine_Loaded(object sender, RoutedEventArgs e)
+        private void RedLine_Loaded(object sender, RoutedEventArgs e)
         {
-            string json;
-            StopInfo stops;
-            try
+            WebClient webClient = new WebClient();
+            webClient.DownloadStringCompleted += new DownloadStringCompletedEventHandler(webClient_DownloadStringCompleted);
+            webClient.DownloadStringAsync(new Uri(red931));
+        }
+        void webClient_DownloadStringCompleted(object sender, DownloadStringCompletedEventArgs e)
+        {
+            var rootObject = JsonConvert.DeserializeObject<Rootobject>(e.Result);
+            double lat, longitude;
+            MapPolyline line = new MapPolyline();
+            line.StrokeColor = Colors.Red;
+            line.StrokeThickness = 2;
+
+            double[] coord = new double[2*rootObject.direction[0].stop.Length];
+            for (int i = 0; i < rootObject.direction[0].stop.Length; i++)
             {
-                HttpClient httpClient = new HttpClient();
-                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                json = await httpClient.GetStringAsync(red931);
-                stops = JsonConvert.DeserializeObject<StopInfo>(json);
-                string haha = stops.direction[0].stop[0].stop_lon;
+                lat = Convert.ToDouble(rootObject.direction[0].stop[i].stop_lat);
+                longitude = Convert.ToDouble(rootObject.direction[0].stop[i].stop_lon);
+
+                line.Path.Add(new GeoCoordinate(lat, longitude));
+
+                Ellipse myCircle = new Ellipse();
+                myCircle.Fill = new SolidColorBrush(Colors.Red);
+                myCircle.Height = 10;
+                myCircle.Width = 10;
+                myCircle.Opacity = 60;
+                MapOverlay myLocationOverlay = new MapOverlay();
+                myLocationOverlay.Content = myCircle;
+                myLocationOverlay.PositionOrigin = new Point(0.5, 0.5);
+                myLocationOverlay.GeoCoordinate = new GeoCoordinate(lat, longitude, 200);
+                MapLayer myLocationLayer = new MapLayer();
+                myLocationLayer.Add(myLocationOverlay);
+                map.Layers.Add(myLocationLayer);
             }
-            catch (JsonSerializationException jsonner) {
-                Console.WriteLine("Jsonner Exception");
-            }
-            catch (HttpRequestException httpe)
-            {
-                Console.WriteLine("Http exception");
-            }
+            map.MapElements.Add(line);
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
