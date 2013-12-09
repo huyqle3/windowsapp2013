@@ -29,10 +29,10 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <maps:Map x:Name="map"/>
-            <Button Content="+" HorizontalAlignment="Left" Margin="10,316,0,0" VerticalAlignment="Top" Height="64" Width="70" Click="Button_Click_1"/>
-            <Button Content="-" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click_2"/>
+            <Button Content="+" HorizontalAlignment="Left" Margin="228,614,0,0" VerticalAlignment="Top" Height="72" Width="109" Click="Button_Click_1" Foreground="Black" Background="White" BorderBrush="Black"/>
+            <Button Content="-" HorizontalAlignment="Left" Margin="337,614,0,0" VerticalAlignment="Top" Width="109" Click="Button_Click_2" Height="72" BorderThickness="3" Foreground="Black" Background="White" BorderBrush="Black"/>
         </Grid>
-        <Button Content="Location" HorizontalAlignment="Left" Margin="284,0,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Location" HorizontalAlignment="Left" Margin="12,614,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.Row="1" Foreground="Black" Background="White" BorderBrush="Black"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

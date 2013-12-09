@@ -36,11 +36,11 @@ namespace OnTimePhoneApp
 
     public partial class BlueLine : PhoneApplicationPage
     {
-        const string blue946 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=wX9NwuHnZU2ToO7GmGR9uw&route=946_";
+        const string blue946 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=ePbnXz1wU0Oru5ApeL_mqA&route=946_";
         public BlueLine()
         {
             InitializeComponent();
-            map.SetView(new GeoCoordinate(42.3487, -71.0956, 200), 12);
+            map.SetView(new GeoCoordinate(42.3797, -71.0230, 150), 13);
             Loaded += BlueLine_Loaded;
         }
 
@@ -51,7 +51,7 @@ namespace OnTimePhoneApp
             Geocoordinate myGeocoordinate = myGeoposition.Coordinate;
             GeoCoordinate myGeoCoordinate = CoordinateConverterBlue.ConvertGeocoordinateBlue(myGeocoordinate);
             this.map.Center = myGeoCoordinate;
-            this.map.ZoomLevel = 13;
+            this.map.ZoomLevel = 17;
             Ellipse myCircle = new Ellipse();
             myCircle.Fill = new SolidColorBrush(Colors.Red);
             myCircle.Height = 15;

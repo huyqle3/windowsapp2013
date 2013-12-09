@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
     x:Class="OnTimePhoneApp.RedLine"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -23,16 +24,23 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Red Line" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="Red Line" Style="{StaticResource PhoneTextNormalStyle}" Foreground="White"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <maps:Map x:Name="map"/>
-            <Button Content="+" HorizontalAlignment="Left" Margin="10,316,0,0" VerticalAlignment="Top" Height="64" Width="70" Click="Button_Click_1"/>
-            <Button Content="-" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top" Width="70" Click="Button_Click_2"/>
+            <Button Content="+" HorizontalAlignment="Left" Margin="228,614,0,0" VerticalAlignment="Top" Height="72" Width="109" Click="Button_Click_1" BorderThickness="3" Background="White" Foreground="Black" BorderBrush="Black"/>
+            <Button Content="-" HorizontalAlignment="Left" Margin="337,614,0,0" VerticalAlignment="Top" Width="109" Click="Button_Click_2" Height="72" BorderThickness="3" Foreground="Black" Background="White" BorderBrush="Black"/>
         </Grid>
-        <Button Content="Location" HorizontalAlignment="Left" Margin="284,0,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Button Content="Location" HorizontalAlignment="Left" Margin="12,614,0,0" VerticalAlignment="Top" Click="Button_Click" Grid.Row="1" Background="White" BorderThickness="3" Foreground="Black" BorderBrush="Black"/>
+        <Button Content="Schedule" HorizontalAlignment="Left" Margin="305,-5,0,0" VerticalAlignment="Top" Width="166">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <ec:NavigateToPageAction TargetPage="/RedLineSchedule.xaml"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
     </Grid>
 
 </phone:PhoneApplicationPage>

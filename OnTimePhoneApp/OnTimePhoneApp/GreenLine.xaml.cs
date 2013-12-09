@@ -36,14 +36,14 @@ namespace OnTimePhoneApp
 
     public partial class GreenLine : PhoneApplicationPage
     {
-        const string green810 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=wX9NwuHnZU2ToO7GmGR9uw&route=810_";
-        const string green830 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=wX9NwuHnZU2ToO7GmGR9uw&route=830_";
-        const string green852 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=wX9NwuHnZU2ToO7GmGR9uw&route=852_";
+        const string green810 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=ePbnXz1wU0Oru5ApeL_mqA&route=810_";
+        const string green830 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=ePbnXz1wU0Oru5ApeL_mqA&route=830_";
+        const string green852 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=ePbnXz1wU0Oru5ApeL_mqA&route=852_";
 
         public GreenLine()
         {
             InitializeComponent();
-            map.SetView(new GeoCoordinate(42.3487, -71.0956, 200), 12);
+            map.SetView(new GeoCoordinate(42.3476, -71.1006, 150), 12);
             Loaded += GreenLine_Loaded;
         }
 
@@ -78,8 +78,8 @@ namespace OnTimePhoneApp
 
                 Ellipse myCircle = new Ellipse();
                 myCircle.Fill = new SolidColorBrush(Colors.Green);
-                myCircle.Height = 10;
-                myCircle.Width = 10;
+                myCircle.Height = 15;
+                myCircle.Width = 15;
                 myCircle.Opacity = 60;
                 MapOverlay myLocationOverlay = new MapOverlay();
                 myLocationOverlay.Content = myCircle;
@@ -99,7 +99,7 @@ namespace OnTimePhoneApp
             Geocoordinate myGeocoordinate = myGeoposition.Coordinate;
             GeoCoordinate myGeoCoordinate = CoordinateConverterGreen.ConvertGeocoordinateGreen(myGeocoordinate);
             this.map.Center = myGeoCoordinate;
-            this.map.ZoomLevel = 13;
+            this.map.ZoomLevel = 17;
             Ellipse myCircle = new Ellipse();
             myCircle.Fill = new SolidColorBrush(Colors.Green);
             myCircle.Height = 10;

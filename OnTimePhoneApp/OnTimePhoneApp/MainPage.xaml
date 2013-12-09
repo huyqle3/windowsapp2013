@@ -41,7 +41,7 @@
 
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
             <!--<TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>-->
-            <TextBlock Text="OnTime" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="WhiteSmoke"/>
+            <TextBlock Text="On Time" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="WhiteSmoke" HorizontalAlignment="Center"/>
         </StackPanel>
 
         <!--Uncomment to see an alignment grid to help ensure your controls are
@@ -52,36 +52,36 @@
             Before shipping remove this XAML and the image itself.-->
         <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="Green Line" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="164" Width="208" Click="Button_Click">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="14,0,10,0">
+            <Button Content="Green Line" HorizontalAlignment="Left" Margin="238,10,0,0" VerticalAlignment="Top" Height="171" Width="208">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <ec:NavigateToPageAction TargetPage="/GreenLine.xaml"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
-            <Button Content="Orange Line" HorizontalAlignment="Left" Margin="0,179,0,0" VerticalAlignment="Top" Height="171" Width="208">
+            <Button Content="Orange Line" HorizontalAlignment="Left" Margin="238,198,0,0" VerticalAlignment="Top" Height="171" Width="208">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <ec:NavigateToPageAction TargetPage="/OrangeLine.xaml"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
-            <Button Content="Blue Line" HorizontalAlignment="Left" Margin="215,179,0,0" VerticalAlignment="Top" Height="171" Width="231">
+            <Button Content="Blue Line" HorizontalAlignment="Left" Margin="10,198,0,0" VerticalAlignment="Top" Height="171" Width="208">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <ec:NavigateToPageAction TargetPage="/BlueLine.xaml"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
-            <Button Content="Red Line" HorizontalAlignment="Left" Margin="215,10,0,0" VerticalAlignment="Top" Height="164" Width="231">
+            <Button Content="Red Line" HorizontalAlignment="Left" VerticalAlignment="Top" Height="171" Width="208" Margin="10,10,0,0">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <ec:NavigateToPageAction TargetPage="/RedLine.xaml"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>
-            <Button Content="Map" HorizontalAlignment="Left" Margin="122,355,0,0" VerticalAlignment="Top" Height="138" Width="176" RenderTransformOrigin="-0.049,1.943">
+            <Button Content="Full Map" HorizontalAlignment="Left" Margin="64,387,0,0" VerticalAlignment="Top" Height="141" Width="328" RenderTransformOrigin="-0.049,1.943">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="Click">
                         <ec:NavigateToPageAction TargetPage="/Map.xaml"/>

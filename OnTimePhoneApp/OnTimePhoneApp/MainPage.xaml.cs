@@ -8,6 +8,10 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using OnTimePhoneApp.Resources;
+using System.Threading.Tasks;
+using Windows.Devices.Geolocation;
+using System.IO.IsolatedStorage;
+
 
 namespace OnTimePhoneApp
 {
@@ -19,11 +23,6 @@ namespace OnTimePhoneApp
             InitializeComponent();
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         // Sample code for building a localized ApplicationBar
@@ -41,5 +40,31 @@ namespace OnTimePhoneApp
         //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
         //    ApplicationBar.MenuItems.Add(appBarMenuItem);
         //}
-    }
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            if (IsolatedStorageSettings.ApplicationSettings.Contains("LocationConsent"))
+            {
+                return;
+            }
+            else
+            {
+                MessageBoxResult result =
+                    MessageBox.Show("On Time would like to use your location. Is that ok?",
+                    "Location",
+                    MessageBoxButton.OKCancel);
+
+                if (result == MessageBoxResult.OK)
+                {
+                    IsolatedStorageSettings.ApplicationSettings["LocationConsent"] = true;
+                }
+                else
+                {
+                    IsolatedStorageSettings.ApplicationSettings["LocationConsent"] = false;
+                }
+
+                IsolatedStorageSettings.ApplicationSettings.Save();
+            }
+        }
+
+        }
 }

@@ -22,6 +22,9 @@ namespace OnTimePhoneApp
     public class Rootobject
     {
         public Direction[] direction { get; set; }
+        //public Mode[] mode { get; set; }
+        public string stop_id { get; set; }
+        public string stop_name { get; set; }
     }
 
     public class Direction
@@ -29,6 +32,7 @@ namespace OnTimePhoneApp
         public string direction_id { get; set; }
         public string direction_name { get; set; }
         public Stop[] stop { get; set; }
+        //public Trip[] trip { get; set; }
     }
 
     public class Stop
@@ -61,7 +65,7 @@ namespace OnTimePhoneApp
 
     public partial class RedLine : PhoneApplicationPage
     {
-        const string red931 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=wX9NwuHnZU2ToO7GmGR9uw&route=931_";
+        const string red931 = "http://realtime.mbta.com/developer/api/v1/stopsbyroute?api_key=ePbnXz1wU0Oru5ApeL_mqA&route=931_";
         
         public RedLine()
         {
@@ -77,7 +81,7 @@ namespace OnTimePhoneApp
             Geocoordinate myGeocoordinate = myGeoposition.Coordinate;
             GeoCoordinate myGeoCoordinate = CoordinateConverterRed.ConvertGeocoordinateRed(myGeocoordinate);
             this.map.Center = myGeoCoordinate;
-            this.map.ZoomLevel = 13;
+            this.map.ZoomLevel = 17;
             Ellipse myCircle = new Ellipse();
             myCircle.Fill = new SolidColorBrush(Colors.Red);
             myCircle.Height = 20;

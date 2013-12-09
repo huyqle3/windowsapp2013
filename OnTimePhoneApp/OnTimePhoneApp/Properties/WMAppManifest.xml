@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{19d52be3-5220-4877-8965-639666e642b8}" Title="OnTimePhoneApp" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="OnTimePhoneApp author" Description="Windows 8 Phone Application to display MBTA train information." Publisher="OnTimePhoneApp" PublisherID="{fcb19c52-d4e8-4fe1-9958-a2c6cad5a071}">
-    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+  <Languages xmlns="">
+    <Language code="en" />
+  </Languages>
+  <App xmlns="" ProductID="{19d52be3-5220-4877-8965-639666e642b8}" Title="OnTimePhoneApp" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Boot Up" Description="Windows 8 Phone Application to display MBTA train information." Publisher="Boot Up" PublisherID="{fcb19c52-d4e8-4fe1-9958-a2c6cad5a071}">
+    <IconPath IsRelative="true" IsResource="false">icon2-2.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_SENSORS" />
